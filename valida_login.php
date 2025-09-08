@@ -1,5 +1,32 @@
 <?php
 
+    // Variável que verifica se a autenticação foi realizada
+    
+
+    // Usuários do sistema
+    // Array que irá armazenar os usuários cadastrados
+    $usuarios_app = [
+        ['email' => 'adm@teste.com.br', 'senha' => '123456'],
+        ['email' => 'user@teste.com.br', 'senha' => 'abcd']
+    ];
+
+    /*
+    echo '<pre>';
+        print_r($usuarios_app);
+    echo '</pre>';
+    */
+
+    // Percorrendo o array que armazena os usuários
+    foreach ($usuarios_app as $user) {
+
+        // Verificando se tem algum dos dados que está sendo colocado no formulário dentro do array
+        if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']){
+
+        }
+
+        echo '<hr>';
+    }
+
     /*
     print_r($_GET);
 
@@ -28,5 +55,3 @@
     echo $_POST['email']; // Mostra o valor digitado no input com name="email"
     echo '<br/>';
     echo $_POST['senha']; // Mostra o valor digitado no input com name="senha"
-
-?>
