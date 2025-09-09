@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     // Variável que verifica se a autenticação foi realizada
     $usuario_atenticado = false;
 
@@ -24,13 +26,14 @@
             $usuario_atenticado = true;
             // Se as verificações forem "true", a variável muda para "true"
         }
-
-        echo '<hr>';
     }
 
     if($usuario_atenticado) {
         echo 'Usuário autenticado';
+        $_SESSION['autenticado'] = 'SIM';
     }else {
+        $_SESSION['autenticado'] = 'NAO';
+
         // Se der false, vai exibir uma mensagem de erro na página do formulário de login
         // O "Location" serve para forçar o redirecionamento para uma página, e o que ta depois do "?", vai para url
         header('Location: index.php?login=erro');

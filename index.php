@@ -46,9 +46,22 @@
                   if(isset($_GET['login']) && $_GET['login'] == 'erro'){
                 ?>
 
-                  <!-- Se a verificação do if dentro do php for true, vai colocar esse bloco de códigos de html na formulário com essa msg -->
+                  <!-- Se a verificação do if dentro do php for true, vai colocar esse bloco de códigos de html no formulário com essa msg -->
                 <div class="text-danger">
                   Usuário ou senha inválido(s)
+                </div>
+
+                <?php } ?>
+
+                <?php
+
+                  // Essa função verifica se um determinado indice do array está cetado e se tem "erro" no "GET"
+                  if(isset($_GET['login']) && $_GET['login'] == 'erro2'){
+                ?>
+
+                  <!-- Se a verificação do if dentro do php for true, vai colocar esse bloco de códigos de html na página com essa msg -->
+                <div class="text-danger">
+                  Faça login antes de acessar as páginas protegidas
                 </div>
 
                 <?php } ?>
