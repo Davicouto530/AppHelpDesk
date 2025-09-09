@@ -39,6 +39,20 @@
                 <div class="form-group">
                   <input name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
+
+                <?php
+
+                  // Essa função verifica se um determinado indice do array está cetado e se tem "erro" no "GET"
+                  if(isset($_GET['login']) && $_GET['login'] == 'erro'){
+                ?>
+
+                  <!-- Se a verificação do if dentro do php for true, vai colocar esse bloco de códigos de html na formulário com essa msg -->
+                <div class="text-danger">
+                  Usuário ou senha inválido(s)
+                </div>
+
+                <?php } ?>
+
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
             </div>

@@ -1,7 +1,7 @@
 <?php
 
     // Variável que verifica se a autenticação foi realizada
-    
+    $usuario_atenticado = false;
 
     // Usuários do sistema
     // Array que irá armazenar os usuários cadastrados
@@ -21,10 +21,19 @@
 
         // Verificando se tem algum dos dados que está sendo colocado no formulário dentro do array
         if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']){
-
+            $usuario_atenticado = true;
+            // Se as verificações forem "true", a variável muda para "true"
         }
 
         echo '<hr>';
+    }
+
+    if($usuario_atenticado) {
+        echo 'Usuário autenticado';
+    }else {
+        // Se der false, vai exibir uma mensagem de erro na página do formulário de login
+        // O "Location" serve para forçar o redirecionamento para uma página, e o que ta depois do "?", vai para url
+        header('Location: index.php?login=erro');
     }
 
     /*
@@ -43,15 +52,17 @@
     */
 
     // Agora, em vez do GET, o código está usando o POST:
-    print_r($_POST);
+    // print_r($_POST);
 
-    echo '<br/>';
+    // echo '<br/>';
 
     // O $_POST também é um array associativo nativo do PHP.
     // Ele guarda os valores enviados por um formulário, mas de forma "escondida",
     // sem aparecer na URL (mais seguro que o GET para dados sensíveis).
     // Os valores são acessados pelo atributo "name" dos inputs do formulário.
 
+    /*
     echo $_POST['email']; // Mostra o valor digitado no input com name="email"
     echo '<br/>';
     echo $_POST['senha']; // Mostra o valor digitado no input com name="senha"
+    */
