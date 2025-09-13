@@ -1,3 +1,3 @@
 # AppHelpDesk
 
-App que simula chamados.
+App que simula chamados para uma empresa.
