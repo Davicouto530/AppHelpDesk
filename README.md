@@ -1,3 +1,3 @@
 # AppHelpDesk
 
-App que simula chamados de serviço para uma empresa.
+App que simula chamados de serviço para uma empresa de manutenção.
